@@ -112,11 +112,6 @@ git clone https://github.com/onlyLT/office-git-init.git ~/.claude/skills/office-
 
 由于初始化时同时生成 `AGENTS.md` 和 `CLAUDE.md`，**建好的工作区本身与 agent 无关**——不管当初用哪个 agent 初始化的，其他遵循 AGENTS.md 约定的助手接手时同样会加载协作纪律。
 
-### 不用 AI agent，独立使用
-
-脚本不依赖任何 AI 工具，直接跑上面的 `init_workspace.py` 即可，效果完全一样。
-
-**依赖**：git、Python 3，以及 `pip install python-docx openpyxl lxml`（textconv 解析 docx/xlsx 用）。
 
 ## 仓库结构
 
