@@ -47,20 +47,32 @@ $ git diff -- 明细表.xlsx
 
 ## 安装
 
-### 作为 Claude Code skill（推荐）
+本 skill 采用通用的 [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills) 格式（`SKILL.md` + 脚本），凡是支持这个格式的 agent 都能用。**安装方式只有一句话：把本仓库克隆到你的 agent 的 skills 目录。**
 
 ```bash
-# 个人级安装（所有项目可用）
+git clone https://github.com/onlyLT/office-git-init.git <你的 agent 的 skills 目录>/office-git-init
+```
+
+各家 agent 的 skills 目录：
+
+| Agent | 个人级（所有项目可用） | 项目级（随代码库走） |
+|---|---|---|
+| Claude Code | `~/.claude/skills/office-git-init` | `<项目>/.claude/skills/office-git-init` |
+| Codex CLI | `~/.codex/skills/office-git-init` | — |
+| WorkBuddy | `~/.workbuddy/skills/office-git-init` | `<项目>/.workbuddy/skills/office-git-init` |
+| 其他 | 参考其文档中的 skills 目录，放入即可 | 同左 |
+
+例如安装到 Claude Code：
+
+```bash
 git clone https://github.com/onlyLT/office-git-init.git ~/.claude/skills/office-git-init
 ```
 
-或安装到单个项目：克隆到项目的 `.claude/skills/office-git-init`。
+安装后无需手动触发——当 agent 接手一个放着 Office 文档、还没配版本管理的文件夹时，会自动匹配到本 skill 并提议初始化。也可以直接说"用 office-git-init 初始化这个文件夹"。（Codex 新增 skill 后若 `/skills` 里没出现，重启一次即可；WorkBuddy 需重启后生效。）
 
-安装后无需手动触发——当 Claude 接手一个放着 Office 文档、还没配版本管理的文件夹时，会自动匹配到本 skill 并提议初始化。也可以直接说"用 office-git-init 初始化这个文件夹"。
+由于初始化时同时生成 `AGENTS.md` 和 `CLAUDE.md`，**建好的工作区本身与 agent 无关**——不管当初用哪个 agent 初始化的，其他遵循 AGENTS.md 约定的助手接手时同样会加载协作纪律。
 
-由于同时生成 `AGENTS.md`，初始化出的工作区对其他遵循 AGENTS.md 约定的 AI 编码助手同样生效。
-
-### 不用 Claude，独立使用
+### 不用 AI agent，独立使用
 
 脚本不依赖任何 AI 工具，可以直接跑：
 
