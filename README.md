@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/icon.png" width="160" alt="office-git-init icon">
+</p>
+
 # office-git-init
 
 > 给 Word / Excel 文档装上"修订记录 + 后悔药"。在文件夹里跑一次，之后 AI 帮你改文档的每一处都**看得见、退得回、盖不掉**。
@@ -121,6 +125,7 @@ office-git-init/
 ├── init_workspace.py   # 一键初始化脚本（幂等）
 ├── office2txt.py       # textconv 驱动：docx/xlsx → 纯文本（段落/表格/脚注/公式）
 ├── 版本管理说明.md      # 初始化时装进目标项目，给不懂编程的同事看的入门说明
+├── assets/             # 图标等宣传素材（不参与 skill 功能）
 └── README.md           # 本文件
 ```
 
